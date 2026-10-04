@@ -19,3 +19,7 @@
 Накатил nginx:1.38, откатил обратно:
 
 <img width="1060" height="1060" alt="image" src="https://github.com/erant-netology-courses/kuber-3.4/blob/main/2_4.jpg?raw=true" />
+
+## Задание 3
+
+<img width="860" height="460" alt="image" src="https://github.com/erant-netology-courses/kuber-3.4/blob/main/3.jpg?raw=true" />
