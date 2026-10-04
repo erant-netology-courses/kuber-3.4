@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-stable
+  name: nginx-canary
   annotations:
-    traefik.ingress.kubernetes.io/service.weight: "9"
+    traefik.ingress.kubernetes.io/service: nginx-weighted@kubernetescrd
 spec:
   ingressClassName: public
   rules:
@@ -14,24 +14,5 @@ spec:
         backend:
           service:
             name: nginx-v1-svc
-            port:
-              number: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nginx-canary
-  annotations:
-    traefik.ingress.kubernetes.io/service.weight: "1"
-spec:
-  ingressClassName: public
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx-v2-svc
             port:
               number: 80

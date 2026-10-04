@@ -1,0 +1,13 @@
+apiVersion: traefik.io/v1alpha1
+kind: TraefikService
+metadata:
+  name: nginx-weighted
+spec:
+  weighted:
+    services:
+    - name: nginx-v1-svc
+      port: 80
+      weight: 9
+    - name: nginx-v2-svc
+      port: 80
+      weight: 1
