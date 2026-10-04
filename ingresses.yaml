@@ -6,7 +6,7 @@ spec:
   entryPoints:
   - web
   routes:
-  - match: PathPrefix(`/`) && Headers(`X-Canary`, `true`)
+  - match: PathPrefix(`/`) && Header(`X-Canary`, `true`)
     kind: Rule
     services:
     - name: nginx-v2-svc
